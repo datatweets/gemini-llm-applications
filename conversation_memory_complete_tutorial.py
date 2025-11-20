@@ -72,7 +72,7 @@ def setup_vertex_ai():
         max_tokens=1024,  # Maximum response length
     )
     
-    print(f"✅ LLM initialized: {MODEL_NAME}")
+    print(f"LLM initialized: {MODEL_NAME}")
     print(f"   Project: {PROJECT_ID}")
     print(f"   Location: {LOCATION}")
     print("=" * 70)
@@ -152,10 +152,10 @@ def demo_basic_memory(llm):
     print(f"Full Conversation History ({len(history.messages)} messages):")
     print("-" * 70)
     for i, msg in enumerate(history.messages, 1):
-        role = "👤 User" if isinstance(msg, HumanMessage) else "🤖 AI"
+        role = "User" if isinstance(msg, HumanMessage) else "AI"
         print(f"{i}. {role}: {msg.content}")
     
-    print("\n💡 Key Takeaway: ChatMessageHistory maintains context across turns!")
+    print("\nKey Takeaway: ChatMessageHistory maintains context across turns!")
     print("=" * 70)
 
 
@@ -246,7 +246,7 @@ def demo_predict_function(llm):
         role = "User" if isinstance(msg, HumanMessage) else "AI"
         print(f"{role}: {msg.content}")
     
-    print("\n💡 Key Takeaway: predict() encapsulates memory management!")
+    print("\nKey Takeaway: predict() encapsulates memory management!")
     print("=" * 70)
 
 
@@ -457,7 +457,7 @@ def demo_buffer_memory(llm):
     print(f"Total messages in history: {len(conversation.get_history())}")
     print("Working memory: ALL messages retained")
     
-    print("\n💡 Buffer memory is simple but can grow large for long conversations")
+    print("\nNote: Buffer memory is simple but can grow large for long conversations")
     print("=" * 70)
 
 
@@ -497,7 +497,7 @@ def demo_window_memory(llm):
     print("  Input: 'What is my name?'")
     response2 = conversation.predict("What is my name?")
     print(f"  Output: {response2}")
-    print("  ✅ Name remembered (within k=1 window)\n")
+    print("  [Name remembered within k=1 window]\n")
     
     # Turn 3 - new topic
     print("Turn 3:")
@@ -511,12 +511,12 @@ def demo_window_memory(llm):
     print("  Input: 'What is my name?'")
     response4 = conversation.predict("What is my name?")
     print(f"  Output: {response4}")
-    print("  ❌ Name forgotten (outside k=1 window)")
+    print("  [Name forgotten - outside k=1 window]")
     
     print(f"\nTotal messages in full history: {len(conversation.get_history())}")
     print(f"Messages in working memory: {len(conversation.get_working_memory())}")
     
-    print("\n💡 Window memory is great for focusing on recent context")
+    print("\nNote: Window memory is great for focusing on recent context")
     print("=" * 70)
 
 
@@ -577,7 +577,7 @@ def demo_token_buffer_memory(llm):
     print(f"Messages in working memory: {len(conversation.get_working_memory())}")
     print("  (Older messages dropped to stay within token limit)")
     
-    print("\n💡 Token buffer ensures you never exceed LLM token limits")
+    print("\nNote: Token buffer ensures you never exceed LLM token limits")
     print("=" * 70)
 
 
@@ -646,7 +646,7 @@ Be sure to bring your laptop to show the latest LLM demo."""
     response = memory.predict("What would be a good demo to show?")
     print(f"  Output: {response}")
     
-    print("\n💡 Summary memory provides context while managing token limits")
+    print("\nNote: Summary memory provides context while managing token limits")
     print("=" * 70)
 
 
@@ -659,7 +659,7 @@ def main():
     print("\n" + "=" * 70)
     print("Complete Conversation Memory Tutorial")
     print("=" * 70)
-    print("\n📚 This tutorial covers:")
+    print("\nThis tutorial covers:")
     print("\n   Part 1 - Basic Memory:")
     print("     1. ChatMessageHistory basics")
     print("     2. Building predict() function")
@@ -668,7 +668,7 @@ def main():
     print("     4. Window Memory (last K exchanges)")
     print("     5. Token Buffer Memory (token limit)")
     print("     6. Summary Buffer Memory (summarize old)")
-    print("\n⏱️  Rate limiting enabled to avoid API quota errors")
+    print("\nRate limiting enabled to avoid API quota errors")
     print("=" * 70)
     
     # Initialize Vertex AI
@@ -713,29 +713,29 @@ def main():
     
     # Final summary
     print("\n\n" + "=" * 70)
-    print("✅ Complete Tutorial Finished!")
+    print("Complete Tutorial Finished!")
     print("=" * 70)
-    print("\n📋 What You Learned:")
+    print("\nWhat You Learned:")
     print("\n   Basic Memory:")
-    print("     ✓ ChatMessageHistory for storing conversations")
-    print("     ✓ Building predict() function (replaces ConversationChain)")
-    print("     ✓ Managing multi-turn conversations")
+    print("     - ChatMessageHistory for storing conversations")
+    print("     - Building predict() function (replaces ConversationChain)")
+    print("     - Managing multi-turn conversations")
     print("\n   Advanced Memory Types:")
-    print("     ✓ Buffer: Store all messages")
-    print("     ✓ Window: Keep last K exchanges")
-    print("     ✓ Token Buffer: Stay within token limits")
-    print("     ✓ Summary Buffer: Summarize old, keep recent")
-    print("\n🎯 Key Concepts:")
-    print("   • Memory enables context-aware conversations")
-    print("   • Different memory types suit different use cases")
-    print("   • LangChain 1.0+ uses modern APIs (no deprecated chains)")
-    print("   • Choose memory type based on conversation length and limits")
-    print("\n💡 When to Use Each Memory Type:")
-    print("   • Buffer: Short conversations, need full context")
-    print("   • Window: Only recent context matters")
-    print("   • Token Buffer: Strict token limits")
-    print("   • Summary Buffer: Long conversations with token limits")
-    print("\n🚀 Next Steps:")
+    print("     - Buffer: Store all messages")
+    print("     - Window: Keep last K exchanges")
+    print("     - Token Buffer: Stay within token limits")
+    print("     - Summary Buffer: Summarize old, keep recent")
+    print("\nKey Concepts:")
+    print("   - Memory enables context-aware conversations")
+    print("   - Different memory types suit different use cases")
+    print("   - LangChain 1.0+ uses modern APIs (no deprecated chains)")
+    print("   - Choose memory type based on conversation length and limits")
+    print("\nWhen to Use Each Memory Type:")
+    print("   - Buffer: Short conversations, need full context")
+    print("   - Window: Only recent context matters")
+    print("   - Token Buffer: Strict token limits")
+    print("   - Summary Buffer: Long conversations with token limits")
+    print("\nNext Steps:")
     print("   • Experiment with different memory types")
     print("   • Adjust k values and token limits")
     print("   • Build your own conversational applications")
@@ -747,7 +747,7 @@ if __name__ == "__main__":
     try:
         main()
     except Exception as e:
-        print(f"\n❌ Error: {e}")
+        print(f"\nError: {e}")
         print("\nTroubleshooting:")
         print("   1. Authenticate: gcloud auth application-default login")
         print("   2. Install packages:")

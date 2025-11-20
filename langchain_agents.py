@@ -32,7 +32,7 @@ from datetime import datetime
 def install_packages():
     """Install all required packages."""
     print("\n" + "=" * 70)
-    print("📦 STEP 1: Installing Required Packages (LangChain 1.0+)")
+    print("STEP 1: Installing Required Packages (LangChain 1.0+)")
     print("=" * 70)
 
     packages = [
@@ -59,13 +59,13 @@ def install_packages():
         )
         print(f"  ✅ {package}")
 
-    print("\n🎉 All packages installed!\n")
+    print("\nAll packages installed successfully!\n")
 
 
 def verify_imports():
     """Verify all imports work with LangChain 1.0+."""
     print("=" * 70)
-    print("📚 STEP 2: Verifying Imports (LangChain 1.0+ API)")
+    print("STEP 2: Verifying Imports (LangChain 1.0+ API)")
     print("=" * 70)
 
     try:
@@ -103,7 +103,7 @@ def verify_imports():
 def setup_vertex_ai():
     """Initialize Vertex AI and LLM."""
     print("=" * 70)
-    print("🚀 STEP 3: Initializing Vertex AI (Gemini 2.0 Flash)")
+    print("STEP 3: Initializing Vertex AI (Gemini 2.0 Flash)")
     print("=" * 70)
 
     try:
@@ -148,7 +148,7 @@ def setup_vertex_ai():
 def test_calculator_agent(llm):
     """Part 2.1: Calculator Agent - Basic Tool Usage."""
     print("=" * 70)
-    print("🧮 PART 2.1: Calculator Agent (Basic Tool)")
+    print("PART 2.1: Calculator Agent (Basic Tool)")
     print("=" * 70)
     print("\nWhat we'll learn:")
     print("  - Creating tools with the @tool decorator")
@@ -180,13 +180,13 @@ def test_calculator_agent(llm):
     print("\n  Invoking tool with expression: '300 * 0.25'")
     result = calculator.invoke({"expression": "300 * 0.25"})
 
-    print(f"\n  ✅ Result: {result}\n")
+    print(f"\n  Result: {result}\n")
 
 
 def test_wikipedia_agent(llm):
     """Part 2.2: Wikipedia Agent - Using Community Tools."""
     print("=" * 70)
-    print("📚 PART 2.2: Wikipedia Agent (Community Tool)")
+    print("PART 2.2: Wikipedia Agent (Community Tool)")
     print("=" * 70)
     print("\nWhat we'll learn:")
     print("  - Using pre-built community tools")
@@ -209,14 +209,14 @@ def test_wikipedia_agent(llm):
     print("\n  Searching Wikipedia...")
     result = wikipedia.invoke({"query": question})
 
-    print("\n  ✅ Result (first 400 chars):")
+    print("\n  Result (first 400 chars):")
     print(f"    {result[:400]}...\n")
 
 
 def test_multi_tool_agent(llm):
     """Part 2.3: Multi-Tool Agent - Combining Multiple Tools."""
     print("=" * 70)
-    print("🔧 PART 2.3: Multi-Tool Agent")
+    print("PART 2.3: Multi-Tool Agent")
     print("=" * 70)
     print("\nWhat we'll learn:")
     print("  - Creating multiple tools")
@@ -263,13 +263,13 @@ def test_multi_tool_agent(llm):
     result3 = current_year.invoke({"query": "What is the year?"})
     print(f"    Current year: {result3}")
 
-    print("\n✅ Multi-tool setup complete!\n")
+    print("\nMulti-tool setup complete!\n")
 
 
 def test_custom_tool_agent(llm):
     """Part 2.4: Custom Tool Agent - Creating Domain-Specific Tools."""
     print("=" * 70)
-    print("🛠️  PART 2.4: Custom Tool Agent")
+    print("PART 2.4: Custom Tool Agent")
     print("=" * 70)
     print("\nWhat we'll learn:")
     print("  - Creating custom domain-specific tools")
@@ -321,7 +321,7 @@ def test_custom_tool_agent(llm):
     age_result = calculate_age.invoke({"birth_year": 1980})
     print(f"    {age_result}")
 
-    print("\n✅ Custom tools working!\n")
+    print("\nCustom tools working!\n")
 
 
 # =============================================================================
@@ -331,7 +331,7 @@ def test_custom_tool_agent(llm):
 def demonstrate_react_framework(llm):
     """Part 3.1: ReAct Framework - Understanding Agent Reasoning."""
     print("=" * 70)
-    print("🧠 PART 3.1: ReAct Framework (Reasoning + Acting)")
+    print("PART 3.1: ReAct Framework (Reasoning + Acting)")
     print("=" * 70)
     print("\nWhat we'll learn:")
     print("  - ReAct (Reasoning + Acting) framework")
@@ -363,13 +363,13 @@ def demonstrate_react_framework(llm):
     print("  - Uses langgraph for orchestration")
     print("  - Tools defined with @tool decorator")
 
-    print("\n✅ ReAct framework explained!\n")
+    print("\nReAct framework explained!\n")
 
 
 def demonstrate_tool_system(llm):
     """Part 3.2: Advanced Tool System."""
     print("=" * 70)
-    print("⚙️  PART 3.2: Advanced Tool System")
+    print("PART 3.2: Advanced Tool System")
     print("=" * 70)
     print("\nWhat we'll learn:")
     print("  - Tool metadata and schemas")
@@ -413,13 +413,13 @@ def demonstrate_tool_system(llm):
     })
     print(f"    Result: {result}")
 
-    print("\n✅ Advanced tool system demonstrated!\n")
+    print("\nAdvanced tool system demonstrated!\n")
 
 
 def demonstrate_error_handling(llm):
     """Part 3.3: Error Handling in Agents."""
     print("=" * 70)
-    print("🚨 PART 3.3: Error Handling & Recovery")
+    print("PART 3.3: Error Handling & Recovery")
     print("=" * 70)
     print("\nWhat we'll learn:")
     print("  - Handling tool errors gracefully")
@@ -462,7 +462,7 @@ def demonstrate_error_handling(llm):
     result3 = risky_operation.invoke({"value": 0})
     print(f"       {result3}")
 
-    print("\n✅ Error handling demonstrated!\n")
+    print("\nError handling demonstrated!\n")
 
 
 # =============================================================================
@@ -472,7 +472,7 @@ def demonstrate_error_handling(llm):
 def research_agent_example(llm):
     """Part 4.1: Complete Research Agent - Real-World Example."""
     print("=" * 70)
-    print("🔬 PART 4.1: Complete Research Agent")
+    print("PART 4.1: Complete Research Agent")
     print("=" * 70)
     print("\nWhat we'll learn:")
     print("  - Building complete research agent")
@@ -502,9 +502,9 @@ def research_agent_example(llm):
         return str(datetime.now().year)
 
     print("\n  Research Agent Tools:")
-    print(f"    ✅ Calculator - for numerical computations")
-    print(f"    ✅ Wikipedia - for knowledge lookup")
-    print(f"    ✅ Year Tool - for temporal calculations")
+    print(f"    - Calculator - for numerical computations")
+    print(f"    - Wikipedia - for knowledge lookup")
+    print(f"    - Year Tool - for temporal calculations")
 
     # Demo research scenario
     print("\n  Research Scenario: Eiffel Tower Age")
@@ -522,13 +522,13 @@ def research_agent_example(llm):
     info = wikipedia.invoke({"query": "Eiffel Tower Paris construction 1889"})
     print(f"    Historical info: {info[:200]}...")
 
-    print("\n✅ Research agent workflow complete!\n")
+    print("\nResearch agent workflow complete!\n")
 
 
 def knowledge_base_agent(llm):
     """Part 4.2: Knowledge Base Agent - Structured Information."""
     print("=" * 70)
-    print("📖 PART 4.2: Knowledge Base Agent")
+    print("PART 4.2: Knowledge Base Agent")
     print("=" * 70)
     print("\nWhat we'll learn:")
     print("  - Creating knowledge base tools")
@@ -591,13 +591,13 @@ def knowledge_base_agent(llm):
     result2 = lookup_language.invoke({"language": "JavaScript"})
     print(f"    {result2}")
 
-    print("\n✅ Knowledge base agent demonstrated!\n")
+    print("\nKnowledge base agent demonstrated!\n")
 
 
 def demonstrate_memory_system(llm):
     """Part 4.2b: Memory Systems - Maintaining Conversation Context."""
     print("=" * 70)
-    print("💾 PART 4.2b: Memory Systems (Conversation Context)")
+    print("PART 4.2b: Memory Systems (Conversation Context)")
     print("=" * 70)
     print("\nWhat we'll learn:")
     print("  - Conversation memory and history")
@@ -744,13 +744,13 @@ def demonstrate_memory_system(llm):
         role = "User (Alfred)" if isinstance(msg, HumanMessage) else "Vertex AI"
         print(f"    {i}. {role}: {msg.content[:80]}...")
 
-    print("\n✅ Memory system with Vertex AI demonstrated!\n")
+    print("\nMemory system with Vertex AI demonstrated!\n")
 
 
 def agent_orchestration_example(llm):
     """Part 4.3: Agent Orchestration - Multiple Agents Working Together."""
     print("=" * 70)
-    print("🎭 PART 4.3: Agent Orchestration")
+    print("PART 4.3: Agent Orchestration")
     print("=" * 70)
     print("\nWhat we'll learn:")
     print("  - Orchestrating multiple specialized agents")

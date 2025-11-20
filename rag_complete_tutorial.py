@@ -63,7 +63,7 @@ CHROMA_PERSIST_DIR = Path("docs/chroma_db")
 def setup_vertex_ai():
     """Initialize Vertex AI."""
     print("\n" + "=" * 70)
-    print("🚀 Initializing Vertex AI")
+    print("Initializing Vertex AI")
     print("=" * 70)
     
     vertexai.init(project=PROJECT_ID, location=LOCATION)
@@ -84,10 +84,10 @@ def setup_vertex_ai():
         location=LOCATION
     )
     
-    print(f"✅ Project: {PROJECT_ID}")
-    print(f"✅ Location: {LOCATION}")
-    print(f"✅ Model: {MODEL_NAME}")
-    print(f"✅ Embedding Model: {EMBEDDING_MODEL}")
+    print(f"Project: {PROJECT_ID}")
+    print(f"Location: {LOCATION}")
+    print(f"Model: {MODEL_NAME}")
+    print(f"Embedding Model: {EMBEDDING_MODEL}")
     print()
     
     return llm, embeddings
@@ -100,7 +100,7 @@ def setup_vertex_ai():
 def demo_csv_loading():
     """Demonstrate loading CSV documents."""
     print("\n" + "=" * 70)
-    print("📄 PART 1.1: CSV Document Loading")
+    print("PART 1.1: CSV Document Loading")
     print("=" * 70)
     
     csv_file = KNOWLEDGE_BASE_DIR / "Data.csv"
@@ -109,7 +109,7 @@ def demo_csv_loading():
     loader = CSVLoader(file_path=str(csv_file))
     data = loader.load()
     
-    print(f"✅ Loaded {len(data)} documents")
+    print(f"Loaded {len(data)} documents")
     print(f"\nFirst document preview:")
     print(data[0].page_content[:200] + "...")
     print()
@@ -118,7 +118,7 @@ def demo_csv_loading():
 def demo_html_loading():
     """Demonstrate loading HTML documents."""
     print("\n" + "=" * 70)
-    print("🌐 PART 1.2: HTML Document Loading")
+    print("PART 1.2: HTML Document Loading")
     print("=" * 70)
     
     html_file = KNOWLEDGE_BASE_DIR / "some_website.html"
@@ -127,7 +127,7 @@ def demo_html_loading():
     loader = BSHTMLLoader(str(html_file))
     data = loader.load()
     
-    print(f"✅ Loaded {len(data)} documents")
+    print(f"Loaded {len(data)} documents")
     print(f"\nContent preview:")
     print(data[0].page_content[:200] + "...")
     print()
@@ -136,7 +136,7 @@ def demo_html_loading():
 def demo_url_loading():
     """Demonstrate loading documents from URLs."""
     print("\n" + "=" * 70)
-    print("🔗 PART 1.3: URL Document Loading")
+    print("PART 1.3: URL Document Loading")
     print("=" * 70)
     
     url = "https://github.com/basecamp/handbook"
@@ -146,18 +146,18 @@ def demo_url_loading():
         loader = WebBaseLoader(url)
         docs = loader.load()
         
-        print(f"✅ Loaded {len(docs)} documents")
+        print(f"Loaded {len(docs)} documents")
         print(f"\nContent preview:")
         print(docs[0].page_content[:500] + "...")
     except Exception as e:
-        print(f"⚠️  URL loading skipped (requires internet): {str(e)[:100]}")
+        print(f"URL loading skipped (requires internet): {str(e)[:100]}")
     print()
 
 
 def demo_pdf_loading():
     """Demonstrate loading PDF documents."""
     print("\n" + "=" * 70)
-    print("📕 PART 1.4: PDF Document Loading")
+    print("PART 1.4: PDF Document Loading")
     print("=" * 70)
     
     pdf_file = KNOWLEDGE_BASE_DIR / "MachineLearning-Lecture01.pdf"
@@ -166,7 +166,7 @@ def demo_pdf_loading():
     loader = PyPDFLoader(str(pdf_file))
     pages = loader.load()
     
-    print(f"✅ Loaded {len(pages)} pages")
+    print(f"Loaded {len(pages)} pages")
     print(f"\nFirst page preview:")
     print(pages[0].page_content[:300] + "...")
     print()
@@ -179,7 +179,7 @@ def demo_pdf_loading():
 def demo_text_splitting():
     """Demonstrate text splitting strategies."""
     print("\n" + "=" * 70)
-    print("✂️  PART 2: Document Splitting")
+    print("PART 2: Document Splitting")
     print("=" * 70)
     
     # Example text
@@ -206,7 +206,7 @@ and words are separated by space."""
     
     chunks = r_splitter.split_text(some_text)
     
-    print(f"\n✅ Split into {len(chunks)} chunks:")
+    print(f"\nSplit into {len(chunks)} chunks:")
     for i, chunk in enumerate(chunks, 1):
         print(f"\nChunk {i}:")
         print(f"  {chunk[:80]}...")
@@ -216,7 +216,7 @@ and words are separated by space."""
 def demo_pdf_splitting():
     """Demonstrate splitting PDF documents."""
     print("\n" + "=" * 70)
-    print("📚 PART 2.2: PDF Document Splitting")
+    print("PART 2.2: PDF Document Splitting")
     print("=" * 70)
     
     # Load multiple PDFs
@@ -232,7 +232,7 @@ def demo_pdf_splitting():
     for loader in loaders:
         docs.extend(loader.load())
     
-    print(f"✅ Loaded {len(docs)} pages total")
+    print(f"Loaded {len(docs)} pages total")
     
     # Split documents
     text_splitter = RecursiveCharacterTextSplitter(
@@ -242,7 +242,7 @@ def demo_pdf_splitting():
     
     splits = text_splitter.split_documents(docs)
     
-    print(f"✅ Split into {len(splits)} chunks")
+    print(f"Split into {len(splits)} chunks")
     print(f"\nFirst chunk preview:")
     print(splits[0].page_content[:200] + "...")
     print()
@@ -257,7 +257,7 @@ def demo_pdf_splitting():
 def demo_text_embeddings(embeddings):
     """Demonstrate text embeddings and similarity."""
     print("\n" + "=" * 70)
-    print("🔢 PART 3: Text Embeddings")
+    print("PART 3: Text Embeddings")
     print("=" * 70)
     
     # Example sentences
@@ -279,7 +279,7 @@ def demo_text_embeddings(embeddings):
     embedding3 = embeddings.embed_query(sentence3)
     embedding4 = embeddings.embed_query(sentence4)
     
-    print(f"✅ Embedding dimension: {len(embedding1)}")
+    print(f"Embedding dimension: {len(embedding1)}")
     
     # Calculate similarities (dot product)
     print("\nSimilarity scores (higher = more similar):")
@@ -299,7 +299,7 @@ def demo_text_embeddings(embeddings):
 def demo_chroma_vectorstore_csv(embeddings):
     """Demonstrate Chroma vectorstore with CSV data."""
     print("\n" + "=" * 70)
-    print("💾 PART 4.1: Chroma Vectorstore - CSV Data")
+    print("PART 4.1: Chroma Vectorstore - CSV Data")
     print("=" * 70)
     
     persist_directory = str(CHROMA_PERSIST_DIR / "chroma-csv")
@@ -340,7 +340,7 @@ def demo_chroma_vectorstore_csv(embeddings):
             persist_directory=persist_directory
         )
     
-    print(f"✅ Vectorstore created with {vectordb._collection.count()} documents")
+    print(f"Vectorstore created with {vectordb._collection.count()} documents")
     
     # Test similarity search
     query = "Please suggest a shirt with sunblocking"
@@ -358,7 +358,7 @@ def demo_chroma_vectorstore_csv(embeddings):
 def demo_chroma_vectorstore_txt(embeddings):
     """Demonstrate Chroma vectorstore with text data."""
     print("\n" + "=" * 70)
-    print("📝 PART 4.2: Chroma Vectorstore - Text Data")
+    print("PART 4.2: Chroma Vectorstore - Text Data")
     print("=" * 70)
     
     persist_directory = str(CHROMA_PERSIST_DIR / "chroma-txt")
@@ -374,7 +374,7 @@ def demo_chroma_vectorstore_txt(embeddings):
     loader = TextLoader(file_path=str(txt_file))
     documents = loader.load()
     
-    print(f"✅ Loaded {len(documents)} documents")
+    print(f"Loaded {len(documents)} documents")
     
     # Create vectorstore
     print(f"\nCreating Chroma vectorstore...")
@@ -384,7 +384,7 @@ def demo_chroma_vectorstore_txt(embeddings):
         persist_directory=persist_directory
     )
     
-    print(f"✅ Vectorstore created with {vectordb._collection.count()} documents")
+    print(f"Vectorstore created with {vectordb._collection.count()} documents")
     
     # Test similarity search
     query = "How do I determine my shoe size?"
@@ -405,7 +405,7 @@ def demo_chroma_vectorstore_txt(embeddings):
 def demo_semantic_search(embeddings):
     """Demonstrate semantic search capabilities."""
     print("\n" + "=" * 70)
-    print("🔍 PART 5: Semantic Search")
+    print("PART 5: Semantic Search")
     print("=" * 70)
     
     persist_directory = str(CHROMA_PERSIST_DIR / "chroma-semantic")
@@ -459,7 +459,7 @@ def demo_semantic_search(embeddings):
 def demo_retrievalqa(llm, embeddings):
     """Demonstrate RAG with modern LangChain 1.0+ LCEL chain."""
     print("\n" + "=" * 70)
-    print("🤖 PART 6: RAG with Retrieval Chain (LCEL)")
+    print("PART 6: RAG with Retrieval Chain (LCEL)")
     print("=" * 70)
     
     persist_directory = str(CHROMA_PERSIST_DIR / "chroma-rag")
@@ -499,7 +499,7 @@ def demo_retrievalqa(llm, embeddings):
             persist_directory=persist_directory
         )
     
-    print(f"✅ Vectorstore created with {vectordb._collection.count()} documents")
+    print(f"Vectorstore created with {vectordb._collection.count()} documents")
     
     # Create RAG chain using modern LCEL (LangChain Expression Language)
     print(f"\nCreating RAG chain using LCEL...")
@@ -529,11 +529,11 @@ Answer:"""
     # Ask questions
     question = "Please suggest a shirt with sunblocking"
     print(f"\nQuestion: '{question}'")
-    print("⏳ Querying LLM...")
+    print("Querying LLM...")
     
     answer = rag_chain.invoke(question)
     
-    print(f"\n✅ Answer:")
+    print(f"\nAnswer:")
     print(f"  {answer}")
     print()
     
@@ -547,7 +547,7 @@ Answer:"""
 def demo_conversational_rag(llm, embeddings):
     """Demonstrate conversational RAG with memory."""
     print("\n" + "=" * 70)
-    print("💬 PART 7: Conversational RAG (with Memory)")
+    print("PART 7: Conversational RAG (with Memory)")
     print("=" * 70)
     
     persist_directory = str(CHROMA_PERSIST_DIR / "chroma-conv-rag")
@@ -570,7 +570,7 @@ def demo_conversational_rag(llm, embeddings):
     for loader in loaders:
         docs.extend(loader.load())
     
-    print(f"✅ Loaded {len(docs)} pages")
+    print(f"Loaded {len(docs)} pages")
     
     # Split documents
     print(f"\nSplitting documents...")
@@ -580,7 +580,7 @@ def demo_conversational_rag(llm, embeddings):
     )
     splits = text_splitter.split_documents(docs)
     
-    print(f"✅ Split into {len(splits)} chunks")
+    print(f"Split into {len(splits)} chunks")
     
     # Create vectorstore with batching (196 chunks is too many for one call)
     print(f"\nCreating vectorstore...")
@@ -604,7 +604,7 @@ def demo_conversational_rag(llm, embeddings):
             persist_directory=persist_directory
         )
     
-    print(f"✅ Vectorstore created with {vectordb._collection.count()} documents")
+    print(f"Vectorstore created with {vectordb._collection.count()} documents")
     
     # Create conversation memory using modern LangChain 1.0+ approach
     print(f"\nCreating conversational chain with memory...")
@@ -644,7 +644,7 @@ def demo_conversational_rag(llm, embeddings):
     question1 = "Is probability a class topic?"
     print(f"\nTurn 1:")
     print(f"  Q: {question1}")
-    print("  ⏳ Querying...")
+    print("  Querying...")
     time.sleep(1)  # Rate limiting
     answer1 = ask_question(question1)
     print(f"  A: {answer1}")
@@ -655,12 +655,12 @@ def demo_conversational_rag(llm, embeddings):
     question2 = "Why are those prerequisites needed?"
     print(f"\nTurn 2:")
     print(f"  Q: {question2}")
-    print("  ⏳ Querying...")
+    print("  Querying...")
     time.sleep(1)  # Rate limiting
     answer2 = ask_question(question2)
     print(f"  A: {answer2}")
     
-    print(f"\n✅ Conversational RAG demonstrated!")
+    print(f"\nConversational RAG demonstrated!")
     print(f"   The AI remembers context from previous turns.")
     print()
     
@@ -674,7 +674,7 @@ def demo_conversational_rag(llm, embeddings):
 def demo_complete_rag_activity(llm, embeddings):
     """Complete RAG activity with California tour packages."""
     print("\n" + "=" * 70)
-    print("🎯 PART 8: Complete RAG Activity - California Tours")
+    print("PART 8: Complete RAG Activity - California Tours")
     print("=" * 70)
     
     persist_directory = str(CHROMA_PERSIST_DIR / "chroma-california")
@@ -690,7 +690,7 @@ def demo_complete_rag_activity(llm, embeddings):
     loader = CSVLoader(file_path=str(csv_file))
     docs = loader.load()
     
-    print(f"✅ Loaded {len(docs)} documents")
+    print(f"Loaded {len(docs)} documents")
     
     # Split documents
     print(f"\nSplitting documents...")
@@ -703,7 +703,7 @@ def demo_complete_rag_activity(llm, embeddings):
     
     pages = r_text_splitter.split_documents(docs)
     
-    print(f"✅ Split into {len(pages)} chunks")
+    print(f"Split into {len(pages)} chunks")
     
     # Create vectorstore with batching
     print(f"\nCreating vectorstore...")
@@ -764,12 +764,12 @@ Answer:"""
     # Ask complex question
     question2 = "Give me details on The Death Valley Survivor's Trek?"
     print(f"\nRAG Query: '{question2}'")
-    print("⏳ Querying LLM...")
+    print("Querying LLM...")
     time.sleep(1)  # Rate limiting
     
     answer = rag_chain.invoke(question2)
     
-    print(f"\n✅ Answer:")
+    print(f"\nAnswer:")
     print(f"  {answer}")
     print()
     
@@ -783,7 +783,7 @@ Answer:"""
 def main():
     """Run all RAG demonstrations."""
     print("\n" + "=" * 70)
-    print("🎓 Complete RAG Tutorial - LangChain 1.0+ with Vertex AI")
+    print("Complete RAG Tutorial - LangChain 1.0+ with Vertex AI")
     print("=" * 70)
     
     print(f"\nKnowledge Base: {KNOWLEDGE_BASE_DIR}")
@@ -796,73 +796,73 @@ def main():
     llm, embeddings = setup_vertex_ai()
     
     # Part 1: Document Loading
-    print("\n" + "🔵" * 35)
+    print("\n" + "=" * 70)
     print("SECTION 1: DOCUMENT LOADING")
-    print("🔵" * 35)
+    print("=" * 70)
     demo_csv_loading()
     demo_html_loading()
     demo_url_loading()
     demo_pdf_loading()
     
     # Part 2: Document Splitting
-    print("\n" + "🟢" * 35)
+    print("\n" + "=" * 70)
     print("SECTION 2: DOCUMENT SPLITTING")
-    print("🟢" * 35)
+    print("=" * 70)
     demo_text_splitting()
     demo_pdf_splitting()
     
     # Part 3: Text Embeddings
-    print("\n" + "🟡" * 35)
+    print("\n" + "=" * 70)
     print("SECTION 3: TEXT EMBEDDINGS")
-    print("🟡" * 35)
+    print("=" * 70)
     demo_text_embeddings(embeddings)
     
     # Part 4: Vector Stores
-    print("\n" + "🟣" * 35)
+    print("\n" + "=" * 70)
     print("SECTION 4: VECTOR STORES")
-    print("🟣" * 35)
+    print("=" * 70)
     demo_chroma_vectorstore_csv(embeddings)
     demo_chroma_vectorstore_txt(embeddings)
     
     # Part 5: Semantic Search
-    print("\n" + "🔴" * 35)
+    print("\n" + "=" * 70)
     print("SECTION 5: SEMANTIC SEARCH")
-    print("🔴" * 35)
+    print("=" * 70)
     demo_semantic_search(embeddings)
     
-    print("\n⏳ Waiting 3 seconds before RAG demos (rate limiting)...")
+    print("\nWaiting 3 seconds before RAG demos (rate limiting)...")
     time.sleep(3)
     
     # Part 6: RAG with RetrievalQA
-    print("\n" + "🟠" * 35)
+    print("\n" + "=" * 70)
     print("SECTION 6: RAG WITH RETRIEVALQA")
-    print("🟠" * 35)
+    print("=" * 70)
     demo_retrievalqa(llm, embeddings)
     
-    print("\n⏳ Waiting 3 seconds (rate limiting)...")
+    print("\nWaiting 3 seconds (rate limiting)...")
     time.sleep(3)
     
     # Part 7: Conversational RAG
-    print("\n" + "⚫" * 35)
+    print("\n" + "=" * 70)
     print("SECTION 7: CONVERSATIONAL RAG")
-    print("⚫" * 35)
+    print("=" * 70)
     demo_conversational_rag(llm, embeddings)
     
-    print("\n⏳ Waiting 3 seconds (rate limiting)...")
+    print("\nWaiting 3 seconds (rate limiting)...")
     time.sleep(3)
     
     # Part 8: Complete Activity
-    print("\n" + "⚪" * 35)
+    print("\n" + "=" * 70)
     print("SECTION 8: COMPLETE RAG ACTIVITY")
-    print("⚪" * 35)
+    print("=" * 70)
     demo_complete_rag_activity(llm, embeddings)
     
     # Summary
     print("\n" + "=" * 70)
-    print("🎉 RAG TUTORIAL COMPLETE!")
+    print("RAG TUTORIAL COMPLETE!")
     print("=" * 70)
     
-    print("\n✅ Topics Covered:")
+    print("\nTopics Covered:")
     print("  1. Document Loading (CSV, PDF, HTML, TXT, URLs)")
     print("  2. Document Splitting (Recursive text splitter)")
     print("  3. Text Embeddings (Vertex AI embeddings)")
@@ -872,11 +872,11 @@ def main():
     print("  7. Conversational RAG (with memory)")
     print("  8. Complete RAG Application")
     
-    print("\n📁 Generated Assets:")
+    print("\nGenerated Assets:")
     print(f"  - Chroma databases in: {CHROMA_PERSIST_DIR}")
     print(f"  - Knowledge base files in: {KNOWLEDGE_BASE_DIR}")
     
-    print("\n💡 Next Steps:")
+    print("\nNext Steps:")
     print("  - Explore the generated Chroma databases")
     print("  - Try your own documents and queries")
     print("  - Experiment with different chunk sizes")
@@ -888,7 +888,7 @@ if __name__ == "__main__":
     try:
         main()
     except Exception as e:
-        print(f"\n❌ Error: {e}")
+        print(f"\nError: {e}")
         import traceback
         traceback.print_exc()
         print("\nMake sure you have:")
