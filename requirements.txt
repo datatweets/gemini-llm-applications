@@ -1,0 +1,70 @@
+# Gemini LLM Applications - Course Requirements
+# Python 3.10+ recommended (tested with Python 3.12)
+
+# Core LangChain Packages (LangChain 1.0+)
+langchain>=1.0.8
+langchain-core>=1.0.6
+langchain-community>=0.4.1
+langchain-text-splitters>=1.0.0
+
+# Google Cloud & Vertex AI Integration
+langchain-google-vertexai>=3.0.3
+google-cloud-aiplatform>=1.128.0
+google-auth>=2.43.0
+
+# Vector Store & Embeddings
+chromadb>=1.3.5
+
+# Document Processing
+pypdf>=6.3.0
+beautifulsoup4>=4.14.2
+lxml>=6.0.2
+
+# Utilities
+python-dotenv>=1.2.0
+pydantic>=2.12.0
+tenacity>=9.1.0
+
+# Optional: Development and Jupyter Support
+# Uncomment if using Jupyter notebooks
+# jupyter>=1.0.0
+# ipython>=9.7.0
+multidict==6.7.0
+mypy_extensions==1.1.0
+numexpr==2.14.1
+numpy==2.3.5
+orjson==3.11.4
+ormsgpack==1.12.0
+packaging==25.0
+primp==0.15.0
+propcache==0.4.1
+proto-plus==1.26.1
+protobuf==6.33.1
+pyarrow==21.0.0
+pyasn1==0.6.1
+pyasn1_modules==0.4.2
+pydantic==2.12.4
+pydantic-settings==2.12.0
+pydantic_core==2.41.5
+python-dateutil==2.9.0.post0
+python-dotenv==1.2.1
+PyYAML==6.0.3
+requests==2.32.5
+requests-toolbelt==1.0.0
+rsa==4.9.1
+shapely==2.1.2
+six==1.17.0
+sniffio==1.3.1
+soupsieve==2.8
+SQLAlchemy==2.0.44
+tenacity==9.1.2
+typing-inspect==0.9.0
+typing-inspection==0.4.2
+typing_extensions==4.15.0
+urllib3==2.5.0
+validators==0.35.0
+websockets==15.0.1
+wikipedia==1.4.0
+xxhash==3.6.0
+yarl==1.22.0
+zstandard==0.25.0
